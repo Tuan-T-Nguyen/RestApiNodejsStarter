@@ -14,7 +14,7 @@
     "precommit": "yarn lint",
     "prestart": "yarn docs",
     "start": "cross-env NODE_ENV=production pm2 start ./src/index.js",
-    "dev": "nodemon ./src/index.js",
+    "dev": "nodemon ./src/index.js --exec babel-node",
     "lint": "eslint ./src/ --ignore-path .gitignore --ignore-pattern internals/scripts",
     "lint:fix": "yarn lint --fix",
     "lint:watch": "yarn lint --watch",
@@ -38,29 +38,6 @@
     "type": "git",
     "url": "git@github.com:danielfsousa/express-rest-es2017-boilerplate.git"
   },
-  "keywords": [
-    "express",
-    "node",
-    "node.js",
-    "mongodb",
-    "mongoose",
-    "passport",
-    "es6",
-    "es7",
-    "es8",
-    "es2017",
-    "mocha",
-    "istanbul",
-    "nyc",
-    "eslint",
-    "Travis CI",
-    "coveralls",
-    "REST",
-    "API",
-    "boilerplate",
-    "generator",
-    "starter project"
-  ],
   "dependencies": {
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
@@ -89,6 +66,10 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
     "apidoc": "^0.17.7",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
@@ -104,5 +85,11 @@
     "sinon": "^7.4.2",
     "sinon-chai": "^3.3.0",
     "supertest": "^4.0.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
